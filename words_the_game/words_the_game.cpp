@@ -109,7 +109,8 @@ void grafic()
     }
 }
 
-int main()
+//int main()
+int WinMain(HINSTANCE hInstance, HINSTANCE hpInstance, LPSTR nCmdLine, int iCmdShow)
 {
     srand(clock() * sf::Mouse::getPosition().x * sf::Mouse::getPosition().y);
 

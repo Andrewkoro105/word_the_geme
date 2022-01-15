@@ -184,7 +184,6 @@ namespace Inp
     {
         void inp(std::wstring str)
         {
-            std::wcout << str << std::endl;
         }
     }
 }
