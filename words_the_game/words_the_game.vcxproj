@@ -149,13 +149,16 @@
   <ItemGroup>
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="Elements.cpp" />
+    <ClCompile Include="Font.cpp" />
     <ClCompile Include="FunctionForElement.cpp" />
+    <ClCompile Include="menuInit.cpp" />
     <ClCompile Include="Varible.cpp" />
     <ClCompile Include="words_the_game.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Console.hpp" />
     <ClInclude Include="Elements.hpp" />
+    <ClInclude Include="Font.hpp" />
     <ClInclude Include="FunctionForElement.hpp" />
     <ClInclude Include="menu.hpp" />
     <ClInclude Include="Player.hpp" />

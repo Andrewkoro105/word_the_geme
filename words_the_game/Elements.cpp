@@ -3,7 +3,7 @@
 
 //---------[Output]
 
-Output::Output(sf::Sprite spr, sf::Text example, sf::Vector2f pos, sf::Vector2i indent, bool(*fun)(InputWord& input, std::wstring previousStr), std::vector <Element*>& UIList) : fun(fun)
+Output::Output(sf::Sprite spr, sf::Text example, sf::Vector2f pos, sf::Vector2i indent, bool(*fun)(InputWord& input, std::wstring previousStr)) : fun(fun)
 {
     spr.setPosition(pos);
     this->spr = spr;
@@ -13,9 +13,6 @@ Output::Output(sf::Sprite spr, sf::Text example, sf::Vector2f pos, sf::Vector2i 
 
 
     this->example = example;
-
-
-    UIList.push_back(this);
 }
 
 void Output::draw(sf::RenderWindow& window)
@@ -71,15 +68,13 @@ void Output::setTextPosition(sf::Text& example, sf::Sprite spr, sf::Vector2i ind
 
 //---------[Input]
 
-Input::Input(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring), std::vector <Element*>& UIList) : clic(clic), rect(rect), fun(fun), inputChar(inputChar)
+Input::Input(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring)) : clic(clic), rect(rect), fun(fun), inputChar(inputChar)
 {
     spr.setPosition(rect.left + rect.width / 2, rect.top + rect.height / 2);
     this->spr = spr;
 
     text.setPosition(rect.left + rect.width / 2, rect.top + rect.height / 2);
     this->text = text;
-
-    UIList.push_back(this);
 }
 
 void Input::handle(sf::RenderWindow& window)
@@ -162,8 +157,8 @@ void Input::backspace()
 
 //---------[NameInput]
 
-NameInput::NameInput(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring, uint8_t), std::vector <Element*>& UIList, uint8_t index) :
-    Input(inputChar, clic, spr, rect, text, 0, UIList), fun(fun), index(index) {}
+NameInput::NameInput(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring, uint8_t), uint8_t index) :
+    Input(inputChar, clic, spr, rect, text, 0), fun(fun), index(index) {}
 
 void NameInput::endInput()
 {
@@ -172,8 +167,8 @@ void NameInput::endInput()
 }
 
 //---------[InputInOutput]
-InputInOutput::InputInOutput(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring, Output*), std::vector <Element*>& UIList, Output* out) :
-    Input(inputChar, clic, spr, rect, text, 0, UIList), fun(fun), out(out) 
+InputInOutput::InputInOutput(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring)) :
+    Input(inputChar, clic, spr, rect, text, 0), fun(fun), out(out) 
 {
     choice = 1;
 }
@@ -207,13 +202,13 @@ void InputInOutput::handle(sf::RenderWindow& window)
 
 void InputInOutput::endInput()
 { 
-    fun(text.getString(), out);
+    fun(text.getString());
     text.setString(L"");
 }
 //---------[Button]
 
-Button::Button(bool* clic, void(*funBut)(std::vector <Element*>*), sf::IntRect rectBut, sf::Sprite spriteBut, sf::Text textBut, std::vector <Element*>& UIList, std::vector <Element*>* object) :
-    clic(clic), funBut(funBut), rectBut(rectBut), object(object)
+Button::Button(bool* clic, void(*funBut)(), sf::IntRect rectBut, sf::Sprite spriteBut, sf::Text textBut) :
+    clic(clic), funBut(funBut), rectBut(rectBut)
 {
     spriteBut.setOrigin(spriteBut.getTextureRect().width / 2, spriteBut.getTextureRect().height / 2);
     spriteBut.setPosition(rectBut.left + rectBut.width / 2, rectBut.top + rectBut.height / 2);
@@ -223,13 +218,10 @@ Button::Button(bool* clic, void(*funBut)(std::vector <Element*>*), sf::IntRect r
     textBut.setPosition(rectBut.left + rectBut.width / 2, rectBut.top + rectBut.height / 2);
 
     this->textBut = textBut;
-
-
-    UIList.push_back(this);
 }
 
-Button::Button(bool* clic, void(*funBut)(std::vector <Element*>*), sf::IntRect rectBut, sf::Sprite spriteBut, sf::Text* textBut, std::vector <Element*>& UIList, std::vector <Element*>* object) :
-    clic(clic), funBut(funBut), rectBut(rectBut), object(object)
+Button::Button(bool* clic, void(*funBut)(), sf::IntRect rectBut, sf::Sprite spriteBut, sf::Text* textBut) :
+    clic(clic), funBut(funBut), rectBut(rectBut)
 {
     spriteBut.setOrigin(spriteBut.getTextureRect().width / 2, spriteBut.getTextureRect().height / 2);
     spriteBut.setPosition(rectBut.left + rectBut.width / 2, rectBut.top + rectBut.height / 2);
@@ -239,9 +231,6 @@ Button::Button(bool* clic, void(*funBut)(std::vector <Element*>*), sf::IntRect r
     (* textBut).setPosition(rectBut.left + rectBut.width / 2, rectBut.top + rectBut.height / 2);
 
     this->textBut = *textBut;
-
-
-    UIList.push_back(this);
 }
 
 void Button::handle(sf::RenderWindow& window)
@@ -253,7 +242,7 @@ void Button::handle(sf::RenderWindow& window)
 
     if (*clic && (rectBut.left < x && rectBut.left + rectBut.width > x &&
         rectBut.top < y && rectBut.top + rectBut.height > y))
-        funBut(object);
+        funBut();
 }
 
 void Button::draw(sf::RenderWindow& window)
@@ -272,7 +261,7 @@ SprElement::SprElement(sf::Sprite& sprite)
     this->sprite = sprite;
 }
 
-SprElement::SprElement(std::string path, sf::Vector2f pos, std::vector <Element*>* UIList)
+SprElement::SprElement(std::string path, sf::Vector2f pos)
 {
     tex.loadFromFile(path);
     sf::Sprite spr(tex);
@@ -283,9 +272,6 @@ SprElement::SprElement(std::string path, sf::Vector2f pos, std::vector <Element*
     spr.setPosition(pos);
 
     sprite = spr;
-
-    if (UIList != 0)
-        (*UIList).push_back(this);
 }
 
 void SprElement::draw(sf::RenderWindow& window)
@@ -297,7 +283,7 @@ void SprElement::draw(sf::RenderWindow& window)
 
 TextElem::TextElem(sf::Text& text) : text(text) {}
 
-TextElem::TextElem(std::wstring str, sf::Vector2f pos, sf::Font& font, std::vector <Element*>* UIElement, sf::Color col, int scale)
+TextElem::TextElem(std::wstring str, sf::Vector2f pos, Font& font, sf::Color col, int scale)
 {
     sf::Text text(str, font);
     text.setFillColor(col);
@@ -308,10 +294,6 @@ TextElem::TextElem(std::wstring str, sf::Vector2f pos, sf::Font& font, std::vect
     text.setCharacterSize(scale);
 
     this->text = text;
-
-    if (UIElement != 0)
-        (*UIElement).push_back(this);
-
 }
 
 void TextElem::draw(sf::RenderWindow& window)

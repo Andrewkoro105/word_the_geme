@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <thread>
+#include "Font.hpp"
 #include "SFML/Graphics.hpp"
 
 struct InputWord
@@ -23,7 +24,7 @@ public:
 class Output : public Element
 {
 public:
-    Output(sf::Sprite spr, sf::Text text, sf::Vector2f pos, sf::Vector2i indent, bool(*fun)(InputWord& input, std::wstring previousStr), std::vector <Element*>& UIList);
+    Output(sf::Sprite spr, sf::Text text, sf::Vector2f pos, sf::Vector2i indent, bool(*fun)(InputWord& input, std::wstring previousStr));
 
     void draw(sf::RenderWindow& window);
 
@@ -44,7 +45,7 @@ private:
 class Input : public Element
 {
 public:
-    Input(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring), std::vector <Element*>& UIList);
+    Input(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring));
     
     virtual void handle(sf::RenderWindow& window);
     void draw(sf::RenderWindow& window);
@@ -70,7 +71,7 @@ protected:
 class NameInput : public Input
 {
 public:
-    NameInput(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring, uint8_t), std::vector <Element*>& UIList, uint8_t index);
+    NameInput(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring, uint8_t), uint8_t index);
 
     void(*fun)(std::wstring, uint8_t index);
     void endInput();
@@ -84,10 +85,10 @@ private:
 class InputInOutput : public Input
 {
 public:
-    InputInOutput(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring, Output*), std::vector <Element*>& UIList, Output* out);
+    InputInOutput(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring));
 
     void handle(sf::RenderWindow& window);
-    void(*fun)(std::wstring, Output*);
+    void(*fun)(std::wstring);
     void endInput();
 
 protected:
@@ -99,21 +100,20 @@ private:
 class Button : public Element
 {
 public:
-    Button(bool* clic, void(*funBut)(std::vector <Element*>*), sf::IntRect rectBut, sf::Sprite spriteBut, sf::Text textBut, std::vector <Element*>& UIList, std::vector <Element*>* object = 0);
+    Button(bool* clic, void(*funBut)(), sf::IntRect rectBut, sf::Sprite spriteBut, sf::Text textBut);
 
-    Button(bool* clic, void(*funBut)(std::vector <Element*>*), sf::IntRect rectBut, sf::Sprite spriteBut, sf::Text* textBut, std::vector <Element*>& UIList, std::vector <Element*>* object = 0);
+    Button(bool* clic, void(*funBut)(), sf::IntRect rectBut, sf::Sprite spriteBut, sf::Text* textBut);
 
     void handle(sf::RenderWindow& window);
 
     void draw(sf::RenderWindow& window);
 
-    void(*funBut)(std::vector <Element*>*);
+    void(*funBut)();
     sf::IntRect rectBut;
     sf::Sprite spriteBut;
     sf::Text textBut;
 
 private:
-    std::vector <Element*>* object;
     bool* clic;
 };
 
@@ -121,18 +121,19 @@ class SprElement : public Element
 {
 public:
     SprElement(sf::Sprite& dr);
-    SprElement(std::string path, sf::Vector2f pos = sf::Vector2f(), std::vector <Element*>* UIList = 0);
+    SprElement(std::string path, sf::Vector2f pos = sf::Vector2f());
     void draw(sf::RenderWindow& window);
 
-    sf::Texture tex;
     sf::Sprite sprite;
+private:
+    sf::Texture tex;
 };
 
 class TextElem : public Element
 {
 public:
     TextElem(sf::Text& dr);
-    TextElem(std::wstring str, sf::Vector2f pos, sf::Font& font, std::vector <Element*>* UIElement = 0, sf::Color col = sf::Color(0, 166, 251), int scale = 25);
+    TextElem(std::wstring str, sf::Vector2f pos, Font& font, sf::Color col = sf::Color(0, 166, 251), int scale = 25);
     void draw(sf::RenderWindow& window);
 
     sf::Text text;

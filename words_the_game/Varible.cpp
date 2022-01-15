@@ -7,7 +7,13 @@
 
 namespace varibles
 {
-	Menu localGame, startBot, startLocal, startOnlineá, end, mainMenu, * nowElements;
+	namespace Input
+	{
+		bool clic = 0;
+		wchar_t inputChar = '\0';
+	}
+
+	Menu* nowElements;
 
 	std::vector<Player> names{ {L""},  {L""}, {L""}, {L""}, {L""}, {L""} };
 

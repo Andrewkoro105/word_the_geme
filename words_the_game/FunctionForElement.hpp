@@ -17,17 +17,17 @@ namespace But
 {
     namespace localB
     {
-        void start(std::vector <Element*>*);
+        void start();
     }
     namespace MainB
     {
-        void localB(std::vector <Element*>*);
-        void bot(std::vector <Element*>*);
-        void online(std::vector <Element*>*);
+        void localB();
+        void bot();
+        void online();
     }
     namespace LocalGameB
     {
-        void hint(std::vector <Element*>* elem);
+        void hint();
     }
 }
 
@@ -43,7 +43,7 @@ namespace InpInOut
 {
     namespace localB
     {
-        void inpLocalGame(std::wstring str, Output* out);
+        void inpLocalGame(std::wstring str);
     }
 }
 

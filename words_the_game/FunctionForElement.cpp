@@ -1,5 +1,7 @@
 
 #include "FunctionForElement.hpp"
+#include "Variable.hpp"
+#include "Elements.hpp"
 
 namespace LocalGame
 {
@@ -81,7 +83,7 @@ namespace But
 {
     namespace localB
     {
-        void start(std::vector <Element*>*)
+        void start()
         {
             std::vector<Player> nowPlayer;
 
@@ -96,29 +98,31 @@ namespace But
             }
         }
     }
+
     namespace MainB
     {
-        void localB(std::vector <Element*>*)
+        void localB()
         {
             varibles::nowElements = &varibles::startLocal;
             std::cout << "local\n";
         }
 
-        void bot(std::vector <Element*>*)
+        void bot()
         {
             std::cout << "bot\n";
         }
 
-        void online(std::vector <Element*>*)
+        void online()
         {
             std::cout << "online\n";
         }
     }
     namespace LocalGameB
     {
-        void hint(std::vector <Element*>* elem)
+        void hint()
         {
-            std::vector<InputWord> textOut = dynamic_cast<Output*>((*elem)[1])->text;
+
+            std::vector<InputWord> textOut = dynamic_cast<Output*>(varibles::localGame.UIList[1])->text;
 
             if (!(textOut.size() == 1 || (textOut.size() == 2 && textOut[1].systemMessage)))
             {
@@ -138,7 +142,7 @@ namespace But
                         unusedWords.push_back(varibles::grWords[lustChar][i].str);
 
                 if (unusedWords.size())
-                    dynamic_cast<InputInOutput*>((*elem)[0])->text.setString(unusedWords[((rand() + 1) % (unusedWords.size()))]);
+                    dynamic_cast<InputInOutput*>(varibles::localGame.UIList[2])->text.setString(unusedWords[((rand() + 1) % (unusedWords.size()))]);
 
             }
         }
@@ -160,9 +164,11 @@ namespace InpInOut
 {
     namespace localB
     {
-        void inpLocalGame(std::wstring str, Output* out)
+        void inpLocalGame(std::wstring str)
         {
             std::wcout << str << std::endl;
+
+            Output* out = dynamic_cast<Output*>(varibles::localGame.UIList[1]);
 
             if (out->text[out->text.size() - 1].systemMessage)
                 out->changeLine(str);
