@@ -8,7 +8,6 @@
 #include "FunctionForElement.hpp"
 #include "Font.hpp"
 
-
 bool Utf8ToUtf16(std::string const& src, std::wstring& dst)
 {
     if (src.empty()) {
@@ -79,7 +78,7 @@ void grafic()
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "Word the game");
 
-    varibles::nowElements = &varibles::mainMenu;
+    varibles::menu::nowElements = &varibles::menu::mainMenu;
 
     while (window.isOpen())
     {
@@ -102,15 +101,15 @@ void grafic()
         window.clear(sf::Color(5, 25, 35));
 
 
-        for (int i = 0; i < (*varibles::nowElements).UIList.size(); i++)
-            (*varibles::nowElements).UIList[i]->handle(window);
+        for (int i = 0; i < (*varibles::menu::nowElements).UIList.size(); i++)
+            (*varibles::menu::nowElements).UIList[i]->handle(window);
 
         window.display();
     }
 }
 
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hpInstance, LPSTR nCmdLine, int iCmdShow)
 //int main()
-int WinMain(HINSTANCE hInstance, HINSTANCE hpInstance, LPSTR nCmdLine, int iCmdShow)
 {
     srand(clock() * sf::Mouse::getPosition().x * sf::Mouse::getPosition().y);
 
@@ -121,5 +120,5 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hpInstance, LPSTR nCmdLine, int iCmdS
 
     grafic();
 
-    console::consolStart();
+    //console::consolStart();
 }

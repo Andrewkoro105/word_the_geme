@@ -1,8 +1,8 @@
 #EN
 ---
 ##Description
-this word game is designed to test the structure of object description.
-at the moment it is available only in local mode (from 2 to 6 people) which has a built-in hint system 
+this word game is designed to test the structure of the description of objects.
+At the moment it dotupny 2 modes: local (from 2 to 6 people) and the game with the bot which built in a system of tips 
 
 ---
 
@@ -13,7 +13,7 @@ to install must be in addition to downloading .exe place in the same folder dict
 ---
 
 ##plans 
-add new modes: game with bot and online game
+add new modes: online game
 
 ---
 #RU
@@ -21,7 +21,7 @@ add new modes: game with bot and online game
 
 ##Описание
 данная игра в слова создана для тестирования структуры описания объектов.
-на данный момент в ней доступен дотупен только локальный режим (от 2 до 6 человек)в котором встроена система подсказок 
+на данный момент в ней дотупны 2 режима : локальный (от 2 до 6 человек) и игра с ботом в которых встроена система подсказок 
 
 ---
 
@@ -32,4 +32,4 @@ add new modes: game with bot and online game
 ---
 
 ##планы 
-добавить новые режимы : игра с ботом и игра онлайн
++ добавить новые режимы : игра онлайн

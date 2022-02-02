@@ -21,9 +21,9 @@ void Output::draw(sf::RenderWindow& window)
 
     sf::Text nowText = example;
 
-    for (int i = text.size() - 1; i >= 0; i--)
+    for (int i = phraze.size() - 1; i >= 0; i--)
     {
-        nowText.setString(text[i].str);
+        nowText.setString(phraze[i].str);
 
         window.draw(nowText);
 
@@ -31,23 +31,23 @@ void Output::draw(sf::RenderWindow& window)
     }
 }
 
-void Output::changeLine(std::wstring str)
+void Output::changeLine(std::wstring str, bool check)
 {
     InputWord word{ str };
 
-    if (fun(word, text[text.size() - 2].str))
-        text[text.size() - 1] = word;
+    if (!check || fun(word, phraze[phraze.size() - 2].str))
+        phraze[phraze.size() - 1] = word;
 }
 
-void Output::addLine(std::wstring str)
+void Output::addLine(std::wstring str, bool check)
 {
-    if (text.size() >= 11)
-        text.erase(text.begin());
+    if (phraze.size() >= 11)
+        phraze.erase(phraze.begin());
 
     InputWord word { str };
 
-    if (fun(word, text[text.size() - 1].str))
-        text.push_back(word);
+    if (!check || fun(word, phraze[phraze.size() - 1].str))
+        phraze.push_back(word);
 }
 
 void Output::setTextOrigin(sf::Text& example)
@@ -68,13 +68,13 @@ void Output::setTextPosition(sf::Text& example, sf::Sprite spr, sf::Vector2i ind
 
 //---------[Input]
 
-Input::Input(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring)) : clic(clic), rect(rect), fun(fun), inputChar(inputChar)
+Input::Input(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text phraze, void (*fun)(std::wstring)) : clic(clic), rect(rect), fun(fun), inputChar(inputChar)
 {
     spr.setPosition(rect.left + rect.width / 2, rect.top + rect.height / 2);
     this->spr = spr;
 
-    text.setPosition(rect.left + rect.width / 2, rect.top + rect.height / 2);
-    this->text = text;
+    phraze.setPosition(rect.left + rect.width / 2, rect.top + rect.height / 2);
+    this->phraze = phraze;
 }
 
 void Input::handle(sf::RenderWindow& window)
@@ -119,7 +119,18 @@ void Input::handle(sf::RenderWindow& window)
 void Input::draw(sf::RenderWindow& window)
 {
     window.draw(spr);
-    window.draw(text);
+    window.draw(phraze);
+}
+
+void Input::setInput(std::wstring text)
+{
+    phraze.setString(text);
+
+    sf::FloatRect textRect = phraze.getLocalBounds();
+    phraze.setOrigin(textRect.left + textRect.width / 2.0f,
+        textRect.top + textRect.height / 2.0f);
+    
+    phraze.setPosition(rect.left + rect.width / 2, rect.top + rect.height / 2);
 }
 
 void Input::begineInput()
@@ -130,50 +141,50 @@ void Input::begineInput()
 void Input::endInput()
 {
     choice = 0;
-    fun(text.getString());
+    fun(phraze.getString());
 }
 
 void Input::centringText()
 {
-    sf::FloatRect textRect = text.getLocalBounds();
-    text.setOrigin(textRect.left + textRect.width / 2.0f,
+    sf::FloatRect textRect = phraze.getLocalBounds();
+    phraze.setOrigin(textRect.left + textRect.width / 2.0f,
         textRect.top + textRect.height / 2.0f);
 }
 
 void Input::addLetter()
 {
-    text.setString((std::wstring)text.getString() + (wchar_t)*inputChar);
+    phraze.setString((std::wstring)phraze.getString() + (wchar_t)*inputChar);
 
     *inputChar = '\0';
 }
 
 void Input::backspace()
 {
-    std::wstring nowtext = (std::wstring)text.getString();
+    std::wstring nowtext = (std::wstring)phraze.getString();
     nowtext.pop_back();
-    text.setString(nowtext);
+    phraze.setString(nowtext);
     *inputChar = '\0';
 }
 
 //---------[NameInput]
 
-NameInput::NameInput(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring, uint8_t), uint8_t index) :
-    Input(inputChar, clic, spr, rect, text, 0), fun(fun), index(index) {}
+NameInput::NameInput(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text phraze, void (*fun)(std::wstring, uint8_t), uint8_t index) :
+    Input(inputChar, clic, spr, rect, phraze, 0), fun(fun), index(index) {}
 
 void NameInput::endInput()
 {
     choice = 0;
-    fun(text.getString(), index);
+    fun(phraze.getString(), index);
 }
 
 //---------[InputInOutput]
-InputInOutput::InputInOutput(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text text, void (*fun)(std::wstring)) :
-    Input(inputChar, clic, spr, rect, text, 0), fun(fun), out(out) 
+ContinuousInput::ContinuousInput(wchar_t* inputChar, bool* clic, sf::Sprite spr, sf::IntRect rect, sf::Text phraze, void (*fun)(std::wstring)) :
+    Input(inputChar, clic, spr, rect, phraze, 0), fun(fun), out(out) 
 {
     choice = 1;
 }
 
-void InputInOutput::handle(sf::RenderWindow& window)
+void ContinuousInput::handle(sf::RenderWindow& window)
 {
     int x = sf::Mouse::getPosition(window).x;
     int y = sf::Mouse::getPosition(window).y;
@@ -200,41 +211,41 @@ void InputInOutput::handle(sf::RenderWindow& window)
     draw(window);
 }
 
-void InputInOutput::endInput()
+void ContinuousInput::endInput()
 { 
-    fun(text.getString());
-    text.setString(L"");
+    fun(phraze.getString());
+    phraze.setString(L"");
 }
 //---------[Button]
 
-Button::Button(bool* clic, void(*funBut)(), sf::IntRect rectBut, sf::Sprite spriteBut, sf::Text textBut) :
-    clic(clic), funBut(funBut), rectBut(rectBut)
+Button::Button(bool* clic, void(*funBut)(), sf::IntRect rectBut, sf::Sprite spriteBut, sf::Text phrazeBut) :
+    clic(clic), funBut(funBut), rectBut(rectBut), textBut(phrazeBut)
 {
     spriteBut.setOrigin(spriteBut.getTextureRect().width / 2, spriteBut.getTextureRect().height / 2);
     spriteBut.setPosition(rectBut.left + rectBut.width / 2, rectBut.top + rectBut.height / 2);
 
     this->spriteBut = spriteBut;
-
-    textBut.setPosition(rectBut.left + rectBut.width / 2, rectBut.top + rectBut.height / 2);
-
-    this->textBut = textBut;
 }
 
-Button::Button(bool* clic, void(*funBut)(), sf::IntRect rectBut, sf::Sprite spriteBut, sf::Text* textBut) :
-    clic(clic), funBut(funBut), rectBut(rectBut)
+void Button::localiztion()
 {
-    spriteBut.setOrigin(spriteBut.getTextureRect().width / 2, spriteBut.getTextureRect().height / 2);
-    spriteBut.setPosition(rectBut.left + rectBut.width / 2, rectBut.top + rectBut.height / 2);
+    if (renderText.getString() != localization.getPhrase(textBut.getString()))
+    {
+        renderText = textBut;
+        renderText.setString(localization.getPhrase(textBut.getString()));
 
-    this->spriteBut = spriteBut;
-
-    (* textBut).setPosition(rectBut.left + rectBut.width / 2, rectBut.top + rectBut.height / 2);
-
-    this->textBut = *textBut;
+        sf::FloatRect textRect = renderText.getLocalBounds();
+        renderText.setOrigin(textRect.left + textRect.width / 2.0f,
+            textRect.top + textRect.height / 2.0f);
+        
+        renderText.setPosition(rectBut.left + rectBut.width / 2 + textBut.getPosition().x, rectBut.top + rectBut.height / 2 + textBut.getPosition().y);
+    }
 }
 
 void Button::handle(sf::RenderWindow& window)
 {
+    localiztion();
+
     draw(window);
 
     int x = sf::Mouse::getPosition(window).x;
@@ -248,7 +259,7 @@ void Button::handle(sf::RenderWindow& window)
 void Button::draw(sf::RenderWindow& window)
 {
     window.draw(spriteBut);
-    window.draw(textBut);
+    window.draw(renderText);
 }
 
 //---------[SprElement]
@@ -281,22 +292,56 @@ void SprElement::draw(sf::RenderWindow& window)
 
 //---------[TextElem]
 
-TextElem::TextElem(sf::Text& text) : text(text) {}
+TextElem::TextElem(sf::Text& phraze) : phraze(phraze) {}
+
+TextElem::TextElem(sf::Text& phraze, sf::Vector2f pos)
+{
+    sf::FloatRect textRect = phraze.getLocalBounds();
+    phraze.setOrigin(textRect.left + textRect.width / 2.0f,
+        textRect.top + textRect.height / 2.0f);
+    phraze.setPosition(pos);
+
+    this->phraze = phraze;
+}
 
 TextElem::TextElem(std::wstring str, sf::Vector2f pos, Font& font, sf::Color col, int scale)
 {
-    sf::Text text(str, font);
-    text.setFillColor(col);
-    sf::FloatRect textRect = text.getLocalBounds();
-    text.setOrigin(textRect.left + textRect.width / 2.0f,
+    sf::Text phraze(str, font);
+    phraze.setCharacterSize(scale);
+    phraze.setFillColor(col);
+    sf::FloatRect textRect = phraze.getLocalBounds();
+    phraze.setOrigin(textRect.left + textRect.width / 2.0f,
         textRect.top + textRect.height / 2.0f);
-    text.setPosition(pos);
-    text.setCharacterSize(scale);
+    phraze.setPosition(pos);
 
-    this->text = text;
+    this->phraze = phraze;
+}
+
+void TextElem::localiztion()
+{
+    if (renderText.getString() != localization.getPhrase(phraze.getString()))
+    {
+        renderText = phraze;
+        renderText.setString(localization.getPhrase(phraze.getString()));
+
+        sf::FloatRect textRect = renderText.getLocalBounds();
+        renderText.setOrigin(textRect.left + textRect.width / 2.0f,
+            textRect.top + textRect.height / 2.0f);
+        if (phraze.getPosition() == sf::Vector2f())
+            renderText.setPosition(textRect.left + textRect.width / 2, textRect.top + textRect.height / 2);
+        else
+            renderText.setPosition(phraze.getPosition());
+    }
+}
+
+void TextElem::handle(sf::RenderWindow& window)
+{
+    localiztion();
+
+    draw(window);
 }
 
 void TextElem::draw(sf::RenderWindow& window)
 {
-    window.draw(text);
+    window.draw(renderText);
 }

@@ -12,9 +12,11 @@ namespace varibles
 		bool clic = 0;
 		wchar_t inputChar = '\0';
 	}
-
-	Menu* nowElements;
-
+	namespace menu
+	{
+		Menu* nowElements;
+	}
+	
 	std::vector<Player> names{ {L""},  {L""}, {L""}, {L""}, {L""}, {L""} };
 
 	std::map <char, std::vector<std::string>> words;

@@ -12,9 +12,10 @@ namespace varibles
 		extern bool clic;
 		extern wchar_t inputChar;
 	}
-
-
-	extern Menu localGame, startLocal, mainMenu, * nowElements;
+	namespace menu
+	{
+		extern Menu BotGame, localGame, startLocal, mainMenu, * nowElements;
+	}
 
 	extern std::vector<Player> names;
 

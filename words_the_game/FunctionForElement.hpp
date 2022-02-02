@@ -2,6 +2,17 @@
 #include <iostream>
 #include "Variable.hpp"
 
+namespace BotGame
+{
+    bool botMove();
+    int existence—heck(std::wstring wordIn);
+    void eliminator(std::wstring& word);
+    void defoltOutput(InputWord& str);
+    bool MainBotGame(InputWord& str, std::wstring previousStr);
+
+    extern wchar_t exceptionLitter[];
+}
+
 namespace LocalGame
 {
     int existence—heck(std::wstring wordIn);
@@ -24,8 +35,14 @@ namespace But
         void localB();
         void bot();
         void online();
+        void changeLanguage();
     }
     namespace LocalGameB
+    {
+        void hint();
+    }
+
+    namespace BotGameB
     {
         void hint();
     }
@@ -45,6 +62,10 @@ namespace InpInOut
     {
         void inpLocalGame(std::wstring str);
     }
+    namespace Bot
+    {
+        void inpLocalGame(std::wstring str);
+    }
 }
 
 namespace Inp
@@ -58,6 +79,11 @@ namespace Inp
 namespace Out
 {
     namespace localGame
+    {
+        bool lineChec(InputWord& str, std::wstring previousStr);
+    }
+
+    namespace botGame
     {
         bool lineChec(InputWord& str, std::wstring previousStr);
     }
