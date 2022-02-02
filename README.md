@@ -7,8 +7,8 @@ At the moment it dotupny 2 modes: local (from 2 to 6 people) and the game with t
 ---
 
 ##Installation
-to install must be in addition to downloading .exe place in the same folder dictionary (russian_nouns8.txt)
-+ by changing the file you can change the words to foreign languages.
+to install you need to download the "build" folder
++ replacing the file "russian_nouns8.txt" you can change the words to foreign
 
 ---
 
@@ -26,8 +26,8 @@ add new modes: online game
 ---
 
 ##Установка
-для установки надо помимо скачимания .exe поместить в туже папку словарь(russian_nouns8.txt)
-+ заменив фаил можно менятьслловори на иностранные
+для установки нужно скачать папку "билд"
++ заменив фаил "russian_nouns8.txt" можно менятьслловори на иностранные
 
 ---
 
