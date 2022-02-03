@@ -1,68 +1,65 @@
-﻿  words_the_game.cpp
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(81,19): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(81,19): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(81,19): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(81,19): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(82,19): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(82,19): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(82,19): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(82,19): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(83,19): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(83,19): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(83,19): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(83,19): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(84,19): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(84,19): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(84,19): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(84,19): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(114,21): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(114,21): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(114,21): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(114,21): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(115,21): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(115,21): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(115,21): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(115,21): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(116,21): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(116,21): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(116,21): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(116,21): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(117,21): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(117,21): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(117,21): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(117,21): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(120,21): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(120,21): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(120,21): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(120,21): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(121,21): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(121,21): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(121,21): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(121,21): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(122,21): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(122,21): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(122,21): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(122,21): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(123,21): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(123,21): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(123,21): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(123,21): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(126,26): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(126,26): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(126,26): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(126,26): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(127,26): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(127,26): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(127,26): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(127,26): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(128,26): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(128,26): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(128,26): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(128,26): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(129,26): error C2589: (: недопустимая лексема справа от "::"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(129,26): error C2760: синтаксическая ошибка: непредвиденный элемент ")". Ожидается ";"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(129,26): error C3878: синтаксическая ошибка: непредвиденный маркер ")" после "expression_statement"
-C:\Project\words_the_game\packages\sfml-system.2.4.2.0\build\native\include\SFML\Graphics\Rect.inl(129,26): message : пропущено восстановление ошибки: ")"
-C:\Project\words_the_game\words_the_game\words_the_game.cpp(57,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Project\words_the_game\words_the_game\words_the_game.cpp(71,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Project\words_the_game\words_the_game\words_the_game.cpp(201,35): warning C4018: <: несоответствие типов со знаком и без знака
+﻿  Console.cpp
+C:\Project\words_the_game\words_the_game\Console.cpp(43,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Project\words_the_game\words_the_game\Console.cpp(56,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Project\words_the_game\words_the_game\Console.cpp(158,39): warning C4018: <: несоответствие типов со знаком и без знака
+  Elements.cpp
+C:\Project\words_the_game\words_the_game\Elements.cpp(64,37): warning C4244: =: преобразование "const T" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Project\words_the_game\words_the_game\Elements.cpp(65,36): warning C4244: =: преобразование "const T" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Project\words_the_game\words_the_game\Elements.cpp(66,103): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Project\words_the_game\words_the_game\Elements.cpp(66,58): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Project\words_the_game\words_the_game\Elements.cpp(73,58): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Project\words_the_game\words_the_game\Elements.cpp(73,31): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Project\words_the_game\words_the_game\Elements.cpp(76,61): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Project\words_the_game\words_the_game\Elements.cpp(76,34): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Project\words_the_game\words_the_game\Elements.cpp(133,61): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Project\words_the_game\words_the_game\Elements.cpp(133,34): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Project\words_the_game\words_the_game\Elements.cpp(224,97): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Project\words_the_game\words_the_game\Elements.cpp(224,58): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Project\words_the_game\words_the_game\Elements.cpp(225,73): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Project\words_the_game\words_the_game\Elements.cpp(225,40): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  Font.cpp
+  FunctionForElement.cpp
+C:\Project\words_the_game\words_the_game\FunctionForElement.cpp(31,31): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Project\words_the_game\words_the_game\FunctionForElement.cpp(48,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Project\words_the_game\words_the_game\FunctionForElement.cpp(66,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Project\words_the_game\words_the_game\FunctionForElement.cpp(125,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Project\words_the_game\words_the_game\FunctionForElement.cpp(143,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Project\words_the_game\words_the_game\FunctionForElement.cpp(233,31): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Project\words_the_game\words_the_game\FunctionForElement.cpp(265,35): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Project\words_the_game\words_the_game\FunctionForElement.cpp(296,35): warning C4018: <: несоответствие типов со знаком и без знака
+  Localization.cpp
+  menuInit.cpp
+  Varible.cpp
+  words_the_game.cpp
+C:\Project\words_the_game\words_the_game\words_the_game.cpp(52,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Project\words_the_game\words_the_game\words_the_game.cpp(104,27): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+C:\Project\words_the_game\words_the_game\FunctionForElement.cpp(42): warning C4715: BotGame::botMove: значение возвращается не при всех путях выполнения
+  All 1299 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  words_the_game.vcxproj -> C:\Project\words_the_game\Release\words_the_game.exe
