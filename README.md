@@ -7,7 +7,7 @@ At the moment it dotupny 2 modes: local (from 2 to 6 people) and the game with t
 ---
 
 ##Installation
-To install you need to download the "bild" or "bild-32" archive
+to install, download the "setup.exe" file from the "setup-32" or "setup-64" folder, depending on your system (if you don't know, install from the "setup-32" folder)
 + replacing the file "russian_nouns8.txt" you can change the words to foreign
 
 ---
@@ -26,7 +26,7 @@ add new modes: online game
 ---
 
 ##Установка
-для установки нужно скачать архив "bild" или "bild-32"
+для установки нужно скачать фаил "setup.exe" из папки "setup-32" или "setup-64" в зависимости от вашей системы (если незнаете то установите из папки "setup-32")
 + заменив фаил "russian_nouns8.txt" можно менятьслловори на иностранные
 
 ---
